@@ -1,0 +1,40 @@
+<h2>Using new if</h2>
+
+@if (showGreenBox)
+{
+  <div class="box box-green">
+
+  </div>
+}
+
+@if (!showGreenBox)
+{
+  <div class="box box-red mt-20">
+
+  </div>
+}
+
+<div class="mt-20">
+  <button class="app-button" (click)="showGreenBox = !showGreenBox">
+    {{ showGreenBox ? 'Fill Blue Color' : 'Fill Green Color' }}
+  </button>
+</div>
+
+<hr>
+
+<h2>Using old if</h2>
+
+<div *ngIf="showGreenBox" class="box box-green">
+
+</div>
+
+<div *ngIf="!showGreenBox" class="box box-red mt-20">
+
+</div>
+
+
+<div class="mt-20">
+  <button class="app-button" (click)="showGreenBox = !showGreenBox">
+    {{ showGreenBox ? 'Fill Blue Color' : 'Fill Green Color' }}
+  </button>
+</div>

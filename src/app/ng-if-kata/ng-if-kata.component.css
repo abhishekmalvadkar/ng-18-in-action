@@ -1,0 +1,14 @@
+.box-green{
+  background-color: lightgreen;
+  border: 1px solid green;
+}
+
+.box-red{
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+
+.box {
+  width: 200px;
+  height: 100px;
+}
