@@ -11,5 +11,5 @@ import { StringInterpolationKataComponent } from './string-interpolation-kata/st
 })
 export class AppComponent {
   title = 'ng-18-in-action';
-  showStringInterpolationKata = true
+  showStringInterpolationKata = false
 }
