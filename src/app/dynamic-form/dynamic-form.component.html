@@ -1,0 +1,36 @@
+<!-- app.component.html -->
+<form (submit)="onSubmit(); $event.preventDefault()">
+  <div *ngFor="let field of config">
+    <!-- Single Select -->
+    <fieldset *ngIf="field.type === 'single-select'">
+      <legend>{{ field.displayName }}</legend>
+      <div *ngFor="let option of field.values">
+        <input
+          type="radio"
+          [id]="option.key"
+          [name]="field.displayName"
+          [value]="option.key"
+          [checked]="option.key === field.default"
+          (change)="onInputChange(field.displayName, option.value)"
+        />
+        <label [for]="option.key">{{ option.value }}</label>
+      </div>
+    </fieldset>
+
+    <!-- Text Input -->
+    <div *ngIf="field.type === 'text'">
+      <label [for]="field.displayName">{{ field.displayName }}</label>
+      <input
+        type="text"
+        [id]="field.displayName"
+        [name]="field.displayName"
+        [(ngModel)]="field.default"
+        (input)="onInputChange(field.displayName, field.default)"
+      />
+      <div *ngIf="errors[field.displayName]" class="error">
+        {{ errors[field.displayName] }}
+      </div>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
